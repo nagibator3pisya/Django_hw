@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+     {% load static %}
+<!--     {% block title %}{% endblock %}-->
+
+     {% block header %}
+         {% include 'includes/nav.html' %}
+     {% endblock %}
+
+{%block content%}
+{% include 'cards.html' %}
+<!-- тут будут карточки -->
+{% endblock %}

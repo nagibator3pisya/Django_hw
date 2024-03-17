@@ -1,0 +1,23 @@
+
+.data{
+    font-size: 5%;
+}
+
+
+.img-icon {
+    vertical-align: middle;
+    margin-right: 1px;
+    margin-bottom: 5px;
+    width: 20px;
+    height: 20px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* Цвет футера */
+    color: #6c757d; /* Цвет текста в футере */
+    text-align: center; /* Выравнивание текста по центру */
+    padding: 15px 0; /* Внутренние отступы футера */
+}

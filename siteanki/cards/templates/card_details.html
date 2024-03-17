@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block header %}
+    {% include 'includes/nav.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="block d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div class="card">
+    <div class="card-body text-success">
+        <h5 class="card-header">{{ card.question }}</h5>
+        <p class="card-text">{{ card.answer }}</p>
+        <div class ='d-flex justify-content-center'>
+            <form action="{% url 'home'  %}" method="GET">
+                <button type="submit" class="btn btn-primary  justify-content-center">Вернуться</button>
+            </form>
+        </div>
+
+    </div>
+      <div class="card-footer text-muted">
+          <div class="row d-flex justify-content">
+               <div class="col">
+
+                   <p style="font-size: 15px;" class="mb-0">Категория:</p>
+                     <span class="d-flex flex-wrap">
+                         <span class="badge bg-secondary">{{ card.category }}</span>
+                     </span>
+
+               </div>
+
+                <div class="col">
+                    <p style="font-size: 15px;" class="mb-0">Теги:</p>
+                    <div class="d-flex flex-wrap">
+                    {% for tag in card.tags %}
+                    <span class="badge bg-secondary  me-1 mb-1 ">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+          </div>
+      <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="mb-0"><small class="text-muted">Дата загрузки: {{ card.upload_date }}</small></p>
+            </div>
+            <div class="col-md-6 text-end">
+                <p class="d-inline">
+                    <img src="{% static 'image/vote_mail.png' %}" alt="vote_mail_icon" class="img-icon ">
+                    {{ card.views_count }}
+                </p>
+                <p class="d-inline">
+                    <img src="{% static 'image/eye.png' %}" alt="eye_icon" class="img-icon ">
+                    {{ card.favorites_count }}
+                </p>
+            </div>
+      </div>
+
+    </div>
+
+
+          </div>
+
+      </div>
+  </div>
+
+
+{% endblock %}

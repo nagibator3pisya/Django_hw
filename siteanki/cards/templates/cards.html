@@ -1,0 +1,18 @@
+{% load static %}
+
+<div class="row mt-4">
+  {% for card in cards %}
+    <div class="col-md-4 mb-3">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ card.question }}</h5>
+          <p class="card-text">{{ card.answer }}</p>
+          <form action="{% url 'card_details' card.id_card %}" method="GET">
+            <button type="submit" class="btn btn-primary">Посмотреть</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
